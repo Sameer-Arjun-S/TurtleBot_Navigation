@@ -1,5 +1,6 @@
-# ROS2_TurtleBot_Walker
- Walker algorithm inplementation in ROS2 on Turtlebot 
+# TurtleBot Navigation
+Navigation and obstacle avoidance implemented on TurtleBot3
+
 ### Author
 Sameer Arjun S
 
