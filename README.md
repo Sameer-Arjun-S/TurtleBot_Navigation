@@ -13,7 +13,7 @@ export TURTLEBOT3_MODEL=burger
 cd ros2_ws/src
 ```
 
-#### Cloning and building the repositiory
+#### Cloning the repositiory
 ```
 git clone https://github.com/Sameer-Arjun-S/TurtleBot_Navigation.git
 cd ..
