@@ -13,17 +13,21 @@ export TURTLEBOT3_MODEL=burger
 cd ros2_ws/src
 ```
 
-#### Cloning the repositiory
+#### Cloning and building the repositiory
 ```
 git clone https://github.com/Sameer-Arjun-S/TurtleBot_Navigation.git
 cd ..
 ```
+#### Building the repository
+```
+colcon build --packages-select turtlebot_navigation
+```
+
 #### Running teleoperation program
 ##### Terminal 1
 ```
-colcon build --packages-select turtlebot_navigation
 source install/setup.bash
-ros2 ros2 launch turtlebot3_gazebo empty_world.launch.py 
+ros2 launch turtlebot3_gazebo empty_world.launch.py 
 ```
 ##### Terminal 2
 ```
@@ -33,7 +37,6 @@ ros2 run turtlebot_navigation teleop.py
 ```
 #### Running obstacle avoidance program
 ```
-colcon build --packages-select turtlebot_navigation
 source install/setup.bash
 ros2 launch turtlebot_navigation launch.py
 ```
