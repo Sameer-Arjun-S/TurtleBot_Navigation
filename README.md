@@ -21,7 +21,7 @@ cd ..
 #### Running teleoperation program
 ##### Terminal 1
 ```
-colcon build --packages-select TurtleBot_Navigation
+colcon build --packages-select turtlebot_navigation
 source install/setup.bash
 ros2 ros2 launch turtlebot3_gazebo empty_world.launch.py 
 ```
@@ -33,7 +33,7 @@ ros2 run turtlebot_navigation teleop.py
 ```
 #### Running obstacle avoidance program
 ```
-colcon build --packages-select TurtleBot_Navigation
+colcon build --packages-select turtlebot_navigation
 source install/setup.bash
 ros2 launch turtlebot_navigation launch.py
 ```
