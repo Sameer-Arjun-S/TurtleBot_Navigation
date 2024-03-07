@@ -95,10 +95,7 @@ def get_key(settings):
 
 
 def print_vels(target_linear_velocity, target_angular_velocity):
-    # print('currently:\tlinear velocity {0}\t angular velocity {1} '.format(
-    #     target_linear_velocity,
-    #     target_angular_velocity))
-    return 'currently:\tlinear velocity {0}\t angular velocity {1} '.format(
+    return 'Present:\tlinear velocity {0}\t angular velocity {1} '.format(
         target_linear_velocity,
         target_angular_velocity)
 
@@ -125,17 +122,14 @@ def constrain(input_vel, low_bound, high_bound):
 
 
 def check_linear_limit_velocity(velocity):
-    if TURTLEBOT3_MODEL == 'burger':
-        return constrain(velocity, -BURGER_MAX_LIN_VEL, BURGER_MAX_LIN_VEL)
-    else:
-        return constrain(velocity, -WAFFLE_MAX_LIN_VEL, WAFFLE_MAX_LIN_VEL)
-
+    TURTLEBOT3_MODEL == 'burger'
+    return constrain(velocity, -BURGER_MAX_LIN_VEL, BURGER_MAX_LIN_VEL)
+    
 
 def check_angular_limit_velocity(velocity):
-    if TURTLEBOT3_MODEL == 'burger':
-        return constrain(velocity, -BURGER_MAX_ANG_VEL, BURGER_MAX_ANG_VEL)
-    else:
-        return constrain(velocity, -WAFFLE_MAX_ANG_VEL, WAFFLE_MAX_ANG_VEL)
+    TURTLEBOT3_MODEL == 'burger'
+    return constrain(velocity, -BURGER_MAX_ANG_VEL, BURGER_MAX_ANG_VEL)
+    
 
 
 def main():
@@ -163,32 +157,32 @@ def main():
                 target_linear_velocity =\
                     check_linear_limit_velocity(target_linear_velocity + LIN_VEL_STEP_SIZE)
                 status = status + 1
-                print("Key Pressed: W -> Robot Moving Forward -> {0}".format(print_vels(target_linear_velocity,target_angular_velocity)))
+                print("Input: W -> Moving Forward -> {0}".format(print_vels(target_linear_velocity,target_angular_velocity)))
                 # print_vels(target_linear_velocity, target_angular_velocity)
             elif key == 'x':
                 target_linear_velocity =\
                     check_linear_limit_velocity(target_linear_velocity - LIN_VEL_STEP_SIZE)
                 status = status + 1
-                print("Key Pressed: X -> Robot Moving Reverse -> {0}".format(print_vels(target_linear_velocity,target_angular_velocity)))
+                print("Input: X -> Moving Reverse -> {0}".format(print_vels(target_linear_velocity,target_angular_velocity)))
                 # print_vels(target_linear_velocity, target_angular_velocity)
             elif key == 'a':
                 target_angular_velocity =\
                     check_angular_limit_velocity(target_angular_velocity + ANG_VEL_STEP_SIZE)
                 status = status + 1
-                print("Key Pressed: A -> Robot Moving Left -> {0}".format(print_vels(target_linear_velocity,target_angular_velocity)))
+                print("Input: A -> Moving Left -> {0}".format(print_vels(target_linear_velocity,target_angular_velocity)))
                 # print_vels(target_linear_velocity, target_angular_velocity)
             elif key == 'd':
                 target_angular_velocity =\
                     check_angular_limit_velocity(target_angular_velocity - ANG_VEL_STEP_SIZE)
                 status = status + 1
-                print("Key Pressed: D -> Robot Moving Right -> {0}".format(print_vels(target_linear_velocity,target_angular_velocity)))
+                print("Input: D -> Moving Right -> {0}".format(print_vels(target_linear_velocity,target_angular_velocity)))
                 # print_vels(target_linear_velocity, target_angular_velocity)
             elif key == ' ' or key == 's':
                 target_linear_velocity = 0.0
                 control_linear_velocity = 0.0
                 target_angular_velocity = 0.0
                 control_angular_velocity = 0.0
-                print("Key Pressed: S -> Robot Halted -> {0}".format(print_vels(target_linear_velocity,target_angular_velocity)))
+                print("Input: S -> Halt -> {0}".format(print_vels(target_linear_velocity,target_angular_velocity)))
                 # print_vels(target_linear_velocity, target_angular_velocity)
             else:
                 if (key == '\x03'):
